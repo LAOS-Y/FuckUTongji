@@ -50,6 +50,9 @@ def report(pid, student_name, student_id, token, college, url="https://tjxsfw.ch
         locNation1="中国",
         locProvince1="上海市",
         locCity1="上海市",
+        source="weixin,windows",
+        healthy='0',
+        hasMoved='false',
     )
     res = requests.post(url, headers=headers, data=params)
     return params, res
@@ -101,7 +104,7 @@ def setup_logger(filename="log.txt"):
 
 
 def get_config():
-    parser = argparse.ArgumentParser(description="cvpack2 Training")
+    parser = argparse.ArgumentParser(description="FuckUTongji -- Free U from ChecK-in Used by Tongji")
     parser.add_argument(
         "--yaml",
         required=True,
@@ -116,6 +119,7 @@ if __name__ == '__main__':
     config = get_config()
     logger = setup_logger()
     logger.info("\n" + pprint.pformat(config))
+    main(config, logger)
     schedule.every().day.at(config["time"]).do(main, config, logger)
     while True:
         schedule.run_pending()
