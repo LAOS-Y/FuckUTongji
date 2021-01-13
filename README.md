@@ -1,6 +1,6 @@
 # FuckUTongji
 
-Free U from Check-in Used by Tongji
+Free U from ChecK-in Used by Tongji
 
 Inspired by https://github.com/Neoyanghc/Tongji_Covid19_Autoclock
 
