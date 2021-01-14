@@ -7,7 +7,7 @@ Inspired by https://github.com/Neoyanghc/Tongji_Covid19_Autoclock
 ## Requirements
 * schedule
 * yagmail
-* yaml
+* pyyaml
 
 ## Usage
 ```bash
