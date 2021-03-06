@@ -21,7 +21,7 @@ def encode_params(**kwargs):
     return string[1:]
 
 
-def report(pid, student_name, student_id, token, college, url="https://tjxsfw.chisai.tech/api/school_tjxsfw_student/yqfkLogDailyreport/v2"):
+def report(pid, student_name, student_id, token, college, url="https://tjxsfw.chisai.tech/api/school_tjxsfw_student/yqfkLogDailyreport/v3"):
     now = datetime.datetime.now()
     now = now.strftime("%Y-%m-%d %H:%M:%S")
     headers = {
@@ -51,8 +51,14 @@ def report(pid, student_name, student_id, token, college, url="https://tjxsfw.ch
         locProvince1="上海市",
         locCity1="上海市",
         source="weixin,windows",
-        healthy='0',
-        hasMoved='false',
+        healthy="0",
+        hasMoved="false",
+        leaveReason="",
+        locRiskaddress="不在范围内",
+        locRisklevelGoverment="低风险",
+        studentStatusQuarantine="正常（未隔离）",
+        locStreet="嘉戬公路",
+        locStreetno="嘉戬公路"
     )
     res = requests.post(url, headers=headers, data=params)
     return params, res
